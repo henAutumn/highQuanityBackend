@@ -1,8 +1,6 @@
 'use strict';
-const uuid = require('uuid');
 const chance = require('chance')()
-const db = require('../models/index').sequelize;
-
+const bcrypt = require('bcryptjs');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', [{
@@ -10,7 +8,7 @@ module.exports = {
       first_name: chance.first(),
       last_name: chance.last(),
       email: chance.email(),
-      password: 'test',
+      password: bcrypt.hashSync('test', 10),
       role: 'admin',
       createdAt: new Date(Date.now()),
       updatedAt: new Date(Date.now())
