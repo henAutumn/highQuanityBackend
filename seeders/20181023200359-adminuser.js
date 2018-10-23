@@ -6,7 +6,7 @@ const db = require('../models/index').sequelize;
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', [{
-      uid: uuid(),
+      uid: 'a4ef25b0-0a14-4df3-99a4-5082117fda99',
       first_name: chance.first(),
       last_name: chance.last(),
       email: chance.email(),
