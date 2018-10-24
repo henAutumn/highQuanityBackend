@@ -6,7 +6,7 @@
     
     **PORT** = 3000
     
-    **PGUSER** = postgres
+    **PGUSERNAME** = postgres
 
     **PGPASSWORD** = actual postgres password
 
