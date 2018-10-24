@@ -4,6 +4,7 @@ const app = express();
 require('./models');
 
 app.use(require('cors')())
+app.use(require('body-parser').json());
 
 require('./controllers')(app);
 require('./config/associations');
