@@ -16,5 +16,5 @@
 
 - create a database in your **pgadmin** called gardenapp
 - run `npm i -g sequelize-cli` in your terminal
-- run `sequelize db:seeder:all` in your terminal
 - run `npm run dev` to start the server
+- run `sequelize db:seed:all` in your terminal
