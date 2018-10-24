@@ -16,10 +16,10 @@ module.exports = {
         updatedAt: new Date(Date.now())
       })
     }
-    return queryInterface.bulkInsert('Transactions', transArray, {});
+    return queryInterface.bulkInsert('transactions', transArray, {});
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Transactions', null, {})
+    return queryInterface.bulkDelete('transactions', null, {})
   }
 };

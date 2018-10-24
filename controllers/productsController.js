@@ -8,10 +8,6 @@ router.get('/', async (req, res) => {
         res.status(500).json({ err: true, msg: 'Products not found' });
 })
 
-router.post('/', validateSessions, (req, res) => {
-    // create a product
-})
-
 router.get('/:id', async (req, res) => {
     const product = await Product.findOne({ where: { id: req.params.id } });
     return product ? res.status(200).json(product) :
