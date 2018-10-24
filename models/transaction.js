@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  var Transaction = sequelize.define('Transaction', {
+  var Transaction = sequelize.define('transaction', {
     customer_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,17 +21,12 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     credit_card: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isCreditCard: true,       // check for valid credit card numbers
         // custom validations are also possible:
-        isEven(value) {
-          if (parseInt(value) % 2 != 0) {
-            throw new Error('Only even values are allowed!')
-          }
         }
-      }
     },
 
     price: {
@@ -47,9 +42,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   
-  Transaction.associate = function (models) {
-    // associations can be defined here
-    Transaction.hasMany(models.Transaction);
-  };
   return Transaction;
 };
