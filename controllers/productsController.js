@@ -14,12 +14,9 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ err: true, msg: 'Product not found' });
 })
 
-router.put('/:id', validateSessions, (req, res) => {
-    // update product by id
+router.delete('/:id', validateSessions, async (req, res) => {
+    const deletedValue = Product.destroy({ where: { id: req.params.id } });
+    return deletedValue ? res.status(200).json({err: false, msg:`Product ${req.params.id} was deleted` }) :
+        res.status(500).json({ err: true, msg: 'Product was not deleted' });
 })
-
-router.delete('/:id', validateSessions, (req, res) => {
-    // delete product by id
-})
-
 module.exports = router;
