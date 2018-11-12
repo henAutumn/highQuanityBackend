@@ -5,7 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let productArr = [];
 
-    for (let i = 1; i < 101; i++) {
+    for (let i = 1; i < 10001; i++) {
       const productObj = {
         id: i,
         product_name: `plant${i}`,

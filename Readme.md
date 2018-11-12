@@ -8,7 +8,7 @@
     
     **PGUSERNAME** = postgres
 
-    **PGPASSWORD** = actual postgres password
+    **    ** = actual postgres password
 
     **PGDATABASE** = gardenapp
 
